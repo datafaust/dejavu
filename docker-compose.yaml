@@ -16,6 +16,8 @@ services:
       - .:/code
     depends_on:
       - db
+    devices:
+      - /dev/snd:/dev/snd
     networks:
       - db_network
 networks:
