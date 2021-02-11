@@ -1,0 +1,21 @@
+pcm.usbmic {
+    type hw
+    card 1
+}
+
+pcm.playback {
+    type hw
+    card 0
+}
+
+pcm.!default {
+    type asym
+    playback.pcm{
+        type plug
+        slave.pcm "playback"
+    }
+    capture.pcm{
+        type plug
+        slave.pcm "usbmic"
+    }
+}
